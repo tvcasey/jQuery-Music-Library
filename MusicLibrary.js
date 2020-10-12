@@ -13,9 +13,11 @@ function grabMusic() {
             //runs if API is successful
             console.log(data);
             for(let i = 0; i < data.length; i++){
-            $("#musicTitles").append("<th>" + data[i].title+ "</th>");
-            $("#musicAlbums").append("<th>" + data[i].album + "</th>");
-        
+            $("#musicTitles").append("<tr><td>" + data[i].title + "</tr></td>");
+            $("#musicAlbums").append("<tr><td>" + data[i].album + "</tr></td>");
+            $("#musicArtists").append("<tr><td>" + data[i].artist + "</tr></td>");
+            $("#musicGenres").append("<tr><td>" + data[i].genre + "</tr></td>");
+            $("#musicReleaseDates").append("<tr><td>" + data[i].releaseDate + "</tr></td>");
             }
         },
         error: function (jQxhr, textStatus, errorThrown) {
